@@ -7,14 +7,19 @@ beans = {
     cityXmlRenderer(XmlRenderer, City) {
         excludes = ['class','dateCreated']
     }
+
     cityJsonRenderer(JsonRenderer, City) {
         excludes=['class','dateCreated']
     }
+
+    /*
     CityXmlCollectionRenderer(CityXmlCollectionRenderer, City) {
         excludes = ['class','dateCreated']
     }
+
     CityJsonCollectionRenderer(CityJsonCollectionRenderer, City) {
         excludes = ['class','dateCreated']
     }
+    */
 
 }
