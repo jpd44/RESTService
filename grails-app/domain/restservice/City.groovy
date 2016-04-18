@@ -17,12 +17,14 @@ class City {
     String postalCode
     String countryCode
     String testField
+    String testField2
 
     static constraints = {
         postalCode blank:false, nullable:false
         cityName blank:false, nullable:false
         countryCode minSize:2, maxSize:3, blank:false, nullable:false
         testField nullable:true, blank:true
+        testField2 nullable:true, blank:true
 
     }
 }
