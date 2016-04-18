@@ -99,11 +99,11 @@ class BootStrap {
     private void seedTestData() {
         def city = null
         println "Start loading cities into database"
-        city = new City(cityName: 'Munich', postalCode: "81927", countryCode: 'DE')
+        city = new City(cityName: 'Munich', postalCode: "81927", countryCode: 'DE', testData: 'foo')
         assert city.save(failOnError:true, flush:true, insert: true)
         city.errors = null
 
-        city = new City(cityName: 'Berlin', postalCode: "10115", countryCode: 'DE')
+        city = new City(cityName: 'Berlin', postalCode: "10115", countryCode: 'DE', testData: 'bar')
         assert city.save(failOnError:true, flush:true, insert: true)
         city.errors = null
 

@@ -16,6 +16,7 @@ class City {
     String cityName
     String postalCode
     String countryCode
+    String testField
 
     static constraints = {
         postalCode blank:false, nullable:false
