@@ -3141,3 +3141,130 @@ Caused by: java.lang.reflect.InvocationTargetException
 Caused by: groovy.lang.MissingPropertyException: No such property: Environment for class: restservice.City
 Possible solutions: environment
 	... 4 more
+2016-04-18 15:12:38,356 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'restservice.City' on field 'testField': rejected value [null]; codes [restservice.City.testField.nullable.error.restservice.City.testField,restservice.City.testField.nullable.error.testField,restservice.City.testField.nullable.error.java.lang.String,restservice.City.testField.nullable.error,city.testField.nullable.error.restservice.City.testField,city.testField.nullable.error.testField,city.testField.nullable.error.java.lang.String,city.testField.nullable.error,restservice.City.testField.nullable.restservice.City.testField,restservice.City.testField.nullable.testField,restservice.City.testField.nullable.java.lang.String,restservice.City.testField.nullable,city.testField.nullable.restservice.City.testField,city.testField.nullable.testField,city.testField.nullable.java.lang.String,city.testField.nullable,nullable.restservice.City.testField,nullable.testField,nullable.java.lang.String,nullable]; arguments [testField,class restservice.City]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at org.codehaus.groovy.grails.orm.hibernate.metaclass.AbstractSavePersistentMethod.doInvokeInternal(AbstractSavePersistentMethod.java:190)
+	at org.codehaus.groovy.grails.orm.hibernate.metaclass.AbstractDynamicPersistentMethod.invoke(AbstractDynamicPersistentMethod.java:69)
+	at org.codehaus.groovy.grails.orm.hibernate.HibernateGormInstanceApi.save(HibernateGormInstanceApi.groovy:196)
+	at restservice.City.save(City.groovy)
+	at restservice.City$save.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at BootStrap.seedTestData(BootStrap.groovy:103)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(ReflectiveInterceptor.java:1426)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1123)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1155)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1123)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:69)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:52)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:154)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:158)
+	at BootStrap$_closure1.doCall(BootStrap.groovy:18)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(ReflectiveInterceptor.java:1426)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1210)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1123)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1084)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1123)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1019)
+	at groovy.lang.Closure.call(Closure.java:426)
+	at groovy.lang.Closure.call(Closure.java:420)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:327)
+	at grails.util.Environment.executeForEnvironment(Environment.java:320)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:296)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsBootstrapClass.callInit(DefaultGrailsBootstrapClass.java:60)
+	at org.codehaus.groovy.grails.web.context.GrailsConfigUtils.executeGrailsBootstraps(GrailsConfigUtils.java:78)
+	at org.codehaus.groovy.grails.web.context.GrailsContextLoaderListener.initWebApplicationContext(GrailsContextLoaderListener.java:110)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4992)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5490)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1575)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1565)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2016-04-18 15:12:38,362 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'restservice.City' on field 'testField': rejected value [null]; codes [restservice.City.testField.nullable.error.restservice.City.testField,restservice.City.testField.nullable.error.testField,restservice.City.testField.nullable.error.java.lang.String,restservice.City.testField.nullable.error,city.testField.nullable.error.restservice.City.testField,city.testField.nullable.error.testField,city.testField.nullable.error.java.lang.String,city.testField.nullable.error,restservice.City.testField.nullable.restservice.City.testField,restservice.City.testField.nullable.testField,restservice.City.testField.nullable.java.lang.String,restservice.City.testField.nullable,city.testField.nullable.restservice.City.testField,city.testField.nullable.testField,city.testField.nullable.java.lang.String,city.testField.nullable,nullable.restservice.City.testField,nullable.testField,nullable.java.lang.String,nullable]; arguments [testField,class restservice.City]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at BootStrap.seedTestData(BootStrap.groovy:103)
+	at BootStrap$_closure1.doCall(BootStrap.groovy:18)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:327)
+	at grails.util.Environment.executeForEnvironment(Environment.java:320)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:296)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2016-04-18 15:12:38,363 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'restservice.City' on field 'testField': rejected value [null]; codes [restservice.City.testField.nullable.error.restservice.City.testField,restservice.City.testField.nullable.error.testField,restservice.City.testField.nullable.error.java.lang.String,restservice.City.testField.nullable.error,city.testField.nullable.error.restservice.City.testField,city.testField.nullable.error.testField,city.testField.nullable.error.java.lang.String,city.testField.nullable.error,restservice.City.testField.nullable.restservice.City.testField,restservice.City.testField.nullable.testField,restservice.City.testField.nullable.java.lang.String,restservice.City.testField.nullable,city.testField.nullable.restservice.City.testField,city.testField.nullable.testField,city.testField.nullable.java.lang.String,city.testField.nullable,nullable.restservice.City.testField,nullable.testField,nullable.java.lang.String,nullable]; arguments [testField,class restservice.City]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at BootStrap.seedTestData(BootStrap.groovy:103)
+	at BootStrap$_closure1.doCall(BootStrap.groovy:18)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:327)
+	at grails.util.Environment.executeForEnvironment(Environment.java:320)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:296)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2016-04-18 15:12:38,363 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'restservice.City' on field 'testField': rejected value [null]; codes [restservice.City.testField.nullable.error.restservice.City.testField,restservice.City.testField.nullable.error.testField,restservice.City.testField.nullable.error.java.lang.String,restservice.City.testField.nullable.error,city.testField.nullable.error.restservice.City.testField,city.testField.nullable.error.testField,city.testField.nullable.error.java.lang.String,city.testField.nullable.error,restservice.City.testField.nullable.restservice.City.testField,restservice.City.testField.nullable.testField,restservice.City.testField.nullable.java.lang.String,restservice.City.testField.nullable,city.testField.nullable.restservice.City.testField,city.testField.nullable.testField,city.testField.nullable.java.lang.String,city.testField.nullable,nullable.restservice.City.testField,nullable.testField,nullable.java.lang.String,nullable]; arguments [testField,class restservice.City]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at BootStrap.seedTestData(BootStrap.groovy:103)
+	at BootStrap$_closure1.doCall(BootStrap.groovy:18)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:327)
+	at grails.util.Environment.executeForEnvironment(Environment.java:320)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:296)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2016-04-18 15:12:38,364 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'restservice.City' on field 'testField': rejected value [null]; codes [restservice.City.testField.nullable.error.restservice.City.testField,restservice.City.testField.nullable.error.testField,restservice.City.testField.nullable.error.java.lang.String,restservice.City.testField.nullable.error,city.testField.nullable.error.restservice.City.testField,city.testField.nullable.error.testField,city.testField.nullable.error.java.lang.String,city.testField.nullable.error,restservice.City.testField.nullable.restservice.City.testField,restservice.City.testField.nullable.testField,restservice.City.testField.nullable.java.lang.String,restservice.City.testField.nullable,city.testField.nullable.restservice.City.testField,city.testField.nullable.testField,city.testField.nullable.java.lang.String,city.testField.nullable,nullable.restservice.City.testField,nullable.testField,nullable.java.lang.String,nullable]; arguments [testField,class restservice.City]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at BootStrap.seedTestData(BootStrap.groovy:103)
+	at BootStrap$_closure1.doCall(BootStrap.groovy:18)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:327)
+	at grails.util.Environment.executeForEnvironment(Environment.java:320)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:296)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2016-04-18 15:12:38,364 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'restservice.City' on field 'testField': rejected value [null]; codes [restservice.City.testField.nullable.error.restservice.City.testField,restservice.City.testField.nullable.error.testField,restservice.City.testField.nullable.error.java.lang.String,restservice.City.testField.nullable.error,city.testField.nullable.error.restservice.City.testField,city.testField.nullable.error.testField,city.testField.nullable.error.java.lang.String,city.testField.nullable.error,restservice.City.testField.nullable.restservice.City.testField,restservice.City.testField.nullable.testField,restservice.City.testField.nullable.java.lang.String,restservice.City.testField.nullable,city.testField.nullable.restservice.City.testField,city.testField.nullable.testField,city.testField.nullable.java.lang.String,city.testField.nullable,nullable.restservice.City.testField,nullable.testField,nullable.java.lang.String,nullable]; arguments [testField,class restservice.City]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at BootStrap.seedTestData(BootStrap.groovy:103)
+	at BootStrap$_closure1.doCall(BootStrap.groovy:18)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:327)
+	at grails.util.Environment.executeForEnvironment(Environment.java:320)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:296)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)

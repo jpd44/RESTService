@@ -22,5 +22,7 @@ class City {
         postalCode blank:false, nullable:false
         cityName blank:false, nullable:false
         countryCode minSize:2, maxSize:3, blank:false, nullable:false
+        testField nullable:true, blank:true
+
     }
 }
