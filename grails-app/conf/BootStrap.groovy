@@ -1,6 +1,8 @@
 import grails.util.Environment
 //import org.apache.tools.ant.types.Environment
 import restservice.City
+import restservice.Healthcheck
+
 //import org.apache.commons.configuration.PropertiesConfiguration
 //import org.apache.commons.configuration.ConfigurationException
 
@@ -98,8 +100,16 @@ class BootStrap {
     }
 
     private void seedTestData() {
+        def healthcheck=null
         def city = null
-        println "Start loading cities into database"
+
+        print "Loading healthcheck data... "
+        healthcheck=new Healthcheck(databaseHealth: 'good')
+        assert healthcheck.save(failOnError: true, flush: true, insert:true)
+        healthcheck.errors=null;
+        println "done."
+
+        print "Loading cities into database... "
         city = new City(cityName: 'Munich', postalCode: "81927", countryCode: 'DE', testField: 'foo', testField2: 'FOO')
         assert city.save(failOnError:true, flush:true, insert: true)
         city.errors = null
@@ -109,6 +119,6 @@ class BootStrap {
         city.errors = null
 
         assert City.count == 2;
-        println "Finished loading $City.count cities into database"
+        println "done, loaed $City.count cities into database"
     }
 }
