@@ -1,6 +1,6 @@
 v1.0
 TODO: healthcheck page that touches the database and returns 500
 TODO: send additional metadata in the response, like AZ
-TODO: additional methods
+TODO: additional methods like POST, DELETE
 TODO: relational model that mimics a travel record with a passenger, hotel, air, car
 

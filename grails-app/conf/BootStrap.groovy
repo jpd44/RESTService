@@ -7,6 +7,7 @@ import restservice.City
 import javax.naming.ConfigurationException
 
 class BootStrap {
+    def grailsApplication
 
     def init = { servletContext ->
         def result="############ running in UNCLEAR mode."
@@ -58,8 +59,8 @@ class BootStrap {
 
             // open a connection, but set the timeout to 2 seconds
             URLConnection urlCxn=url.openConnection();
-            urlCxn.setConnectTimeout(2000);
-            urlCxn.setReadTimeout(2000);
+            urlCxn.setConnectTimeout(5000);
+            urlCxn.setReadTimeout(5000);
             urlCxn.setAllowUserInteraction(false);
             urlCxn.setDoOutput(true);
 
