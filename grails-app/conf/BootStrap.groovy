@@ -123,7 +123,7 @@ class BootStrap {
         city.errors = null
 
 
-        assert City.count == 2;
+        assert City.count == 3;
         println "done, loaed $City.count cities into database"
     }
 }
