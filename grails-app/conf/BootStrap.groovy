@@ -121,8 +121,7 @@ class BootStrap {
         city = new City(cityName: 'Dresden', postalCode: "01097", countryCode: 'DE', testField: 'bar', testField2: 'BAR')
         assert city.save(failOnError:true, flush:true, insert: true)
         city.errors = null
-
-
+        
         assert City.count == 3;
         println "done, loaed $City.count cities into database"
     }
