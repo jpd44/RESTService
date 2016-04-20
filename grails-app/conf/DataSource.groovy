@@ -18,7 +18,7 @@ hibernate {
 environments {
     development {
         dataSource {
-            dbCreate = "create-drop"
+            dbCreate = "validate"
             driverClassName = "com.mysql.jdbc.Driver"
             username="master"
             password="iloveamazon!"
