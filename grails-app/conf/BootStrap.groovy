@@ -118,7 +118,7 @@ class BootStrap {
         assert city.save(failOnError:true, flush:true, insert: true)
         city.errors = null
 
-        assert City.count == 2;
-        println "done, loaed $City.count cities into database"
+        //assert City.count == 2;
+        //println "done, loaed $City.count cities into database"
     }
 }
