@@ -103,13 +103,16 @@ class BootStrap {
         def healthcheck=null
         def city = null
 
+        def now=new Date();
+        def dateString=now.getDateTimeString();
+
         print "Loading healthcheck data... "
-        healthcheck=new Healthcheck(databaseHealth: 'good')
+        healthcheck=new Healthcheck(databaseHealth: 'healthy (' + dateString +')' );
         assert healthcheck.save(failOnError: true, flush: true, insert:true)
         healthcheck.errors=null;
-        println "done."
+        print "done."
 
-        print "Loading cities into database... "
+        print "Loading test city entries into database... "
         city = new City(cityName: 'Munich', postalCode: "81927", countryCode: 'DE', testField: 'foo', testField2: 'FOO')
         assert city.save(failOnError:true, flush:true, insert: true)
         city.errors = null
