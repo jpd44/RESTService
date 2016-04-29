@@ -12,12 +12,13 @@ class CityController extends RestfulController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 1000, 1000)
+        RegionInfo regionInfo=RegionInfo.getInstance();
+
         respond City.list(params), model:[cityCount: City.count()]
 
-        // this prints a string to catalina.out or the grails console (depending on where it is running)
-        //print('someOtherString')
-        RegionInfo regionInfo=RegionInfo.getInstance();
-        print "Running in region: " + regionInfo.getRegion();
+        // can't do this!
+        // RegionInfo regionInfo=RegionInfo.getInstance();
+        // respond regionInfo.getRegion();
     }
 }
 

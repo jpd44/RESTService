@@ -7,5 +7,9 @@ TODO: relational model that mimics a travel record with a passenger, hotel, air,
 
 TODO: beanstalk deployment
 
+TODO need a good story on exactly how to do a blue-green deployment with deployment and warmup first, maybe some scripting and a dashboard showing the instance health, CPU load, and DNS traffic redirected
 
+TODO clean up naming: security groups, launch configurations, EC2 tags, VPC, subnets
+
+TODO: add HTML interface along with API interface
 
