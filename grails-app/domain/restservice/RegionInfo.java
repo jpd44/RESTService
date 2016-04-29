@@ -43,7 +43,9 @@ public final class RegionInfo {
         String line;
 
         try {
-            url=new URL("http://169.254.169.254/latest/meta-data/instance-id");
+            //url=new URL("http://169.254.169.254/latest/meta-data/instance-id");
+            url=new URL("http://169.254.169.254/latest/meta-data/placement/availability-zone");
+
             URLConnection urlCxn=url.openConnection();
             urlCxn.setConnectTimeout(15000);
             urlCxn.setReadTimeout(15000);
