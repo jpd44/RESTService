@@ -11,8 +11,8 @@ import java.net.URLConnection;
 /**
  * Created by jpdixon on 4/29/16.
  */
-public class RegionInfo {
-    private static RegionInfo instance=null;
+public final class RegionInfo {
+    private static final RegionInfo instance=null;
     private String region;
 
     protected RegionInfo() {
@@ -59,6 +59,10 @@ public class RegionInfo {
             }
         }
         catch(SocketTimeoutException ste) {
+            // if we got here, the metadata service must not be responding (we are on something other than an AWS EC2 instance)
+            this.setRegion("localhost");
+        }
+        catch(java.net.ConnectException ce) {
             // if we got here, the metadata service must not be responding (we are on something other than an AWS EC2 instance)
             this.setRegion("localhost");
         }

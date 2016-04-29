@@ -16,6 +16,8 @@ class CityController extends RestfulController {
 
         // this prints a string to catalina.out or the grails console (depending on where it is running)
         //print('someOtherString')
+        RegionInfo regionInfo=RegionInfo.getInstance();
+        print "Running in region: " + regionInfo.getRegion();
     }
 }
 
