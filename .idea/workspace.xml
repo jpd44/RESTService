@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ae35b512-a86b-4037-9f72-06a8e8d93117" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/restservice/CityController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/restservice/CityController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/grails-app.iml" afterPath="$PROJECT_DIR$/grails-app/grails-app.iml" />
     </list>
     <ignored path="RESTService.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -140,6 +138,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="jpdixon@gmail.com" />
         <option value="John Dixon" />
       </list>
     </option>
@@ -678,6 +677,13 @@
       <option name="number" value="Default" />
       <updated>1460824617492</updated>
     </task>
+    <task id="LOCAL-00001" summary="Adjusted index to return all cities">
+      <created>1462214428779</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1462214428779</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
