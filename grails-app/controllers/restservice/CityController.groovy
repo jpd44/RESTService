@@ -11,7 +11,7 @@ class CityController extends RestfulController {
     }
 
     def index(Integer max) {
-        params.max = Math.min(max ?: 1000, 1000)
+        params.max = Math.min(max ?: 100000, 100000)
         RegionInfo regionInfo=RegionInfo.getInstance();
 
         respond City.list(params), model:[cityCount: City.count()]
