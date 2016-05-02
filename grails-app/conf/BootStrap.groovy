@@ -2,14 +2,10 @@ import grails.util.Environment
 //import org.apache.tools.ant.types.Environment
 import restservice.City
 import restservice.Healthcheck
-import restservice.RegionInfo
+import restservice.AWSMetadata
 
 //import org.apache.commons.configuration.PropertiesConfiguration
 //import org.apache.commons.configuration.ConfigurationException
-
-import javax.naming.ConfigurationException
-import javax.swing.plaf.synth.Region
-
 class BootStrap {
     def grailsApplication
 
@@ -49,8 +45,11 @@ class BootStrap {
         def now=new Date();
         def dateString=now.getDateTimeString();
 
+        AWSMetadata awsMetaData=AWSMetadata.getInstance();
+        print "Region: " + awsMetaData.getRegion();
+
         print "Loading healthcheck data... "
-        healthcheck=new Healthcheck(databaseHealth: 'healthy (' + dateString +')' );
+        healthcheck=new Healthcheck(databaseHealth: 'healthy (' + dateString +'), Region: ' + awsMetaData.getRegion() );
         assert healthcheck.save(failOnError: true, flush: true, insert:true)
         healthcheck.errors=null;
         print "done."
@@ -64,9 +63,6 @@ class BootStrap {
         assert city.save(failOnError:true, flush:true, insert: true)
         city.errors = null
 
-        RegionInfo regionInfo=RegionInfo.getInstance();
-
-        print "Region: " + regionInfo.getRegion();
 
         //assert City.count == 2;
         //println "done, loaed $City.count cities into database"

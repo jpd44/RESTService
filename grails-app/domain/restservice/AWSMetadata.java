@@ -11,11 +11,11 @@ import java.net.URLConnection;
 /**
  * Created by jpdixon on 4/29/16.
  */
-public final class RegionInfo {
-    private static final RegionInfo instance=null;
+public final class AWSMetadata {
+    private static final AWSMetadata instance=null;
     private String region;
 
-    protected RegionInfo() {
+    protected AWSMetadata() {
         // defeat constructor
 
         // call the metadata service and populate the region
@@ -23,8 +23,8 @@ public final class RegionInfo {
     }
 
     // singleton pattern
-    public static final RegionInfo getInstance() {
-        if(instance==null) return new RegionInfo();
+    public static final AWSMetadata getInstance() {
+        if(instance==null) return new AWSMetadata();
 
         return(instance);
     }
