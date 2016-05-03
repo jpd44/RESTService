@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ae35b512-a86b-4037-9f72-06a8e8d93117" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/BootStrap.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/BootStrap.groovy" />
     </list>
     <ignored path="RESTService.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -767,7 +766,13 @@
       <option name="project" value="LOCAL" />
       <updated>1462284497325</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added to Shutdown method in Bootstrap">
+      <created>1462285314944</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1462285314944</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -813,7 +818,8 @@
     <MESSAGE value="Adjusted index to return all cities" />
     <MESSAGE value="Adjusted healthcheck to record region" />
     <MESSAGE value="Adjusted healthcheck and getMetadata object" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adjusted healthcheck and getMetadata object" />
+    <MESSAGE value="Added to Shutdown method in Bootstrap" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added to Shutdown method in Bootstrap" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
