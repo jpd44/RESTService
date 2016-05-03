@@ -41,6 +41,7 @@ class BootStrap {
     private void seedTestData() {
         def healthcheck=null
         def city = null
+        def ami_id=null
 
         def now=new Date();
         def dateString=now.getDateTimeString();
@@ -49,7 +50,7 @@ class BootStrap {
         print "Region: " + awsMetaData.getRegion();
 
         print "Loading healthcheck data... "
-        healthcheck=new Healthcheck(databaseHealth: 'healthy (' + dateString +'), Region: ' + awsMetaData.getRegion() );
+        healthcheck=new Healthcheck(databaseHealth: 'healthy (' + dateString +'), Region: ' + awsMetaData.getRegion() + ", AMI ID: " + awsMetaData.getAmi_id() );
         assert healthcheck.save(failOnError: true, flush: true, insert:true)
         healthcheck.errors=null;
         print "done."
