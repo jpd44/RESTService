@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ae35b512-a86b-4037-9f72-06a8e8d93117" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/BootStrap.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/BootStrap.groovy" />
     </list>
     <ignored path="RESTService.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,8 +60,8 @@
       <file leaf-file-name="BootStrap.groovy" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grails-app/conf/BootStrap.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48184356">
-              <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.37709498">
+              <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -772,7 +773,13 @@
       <option name="project" value="LOCAL" />
       <updated>1462285314944</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added to Shutdown method in Bootstrap">
+      <created>1462285322399</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1462285322399</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1311,8 +1318,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/conf/BootStrap.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48184356">
-          <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.37709498">
+          <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
           <folding />
         </state>
       </provider>
