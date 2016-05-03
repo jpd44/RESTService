@@ -15,44 +15,112 @@ import java.util.Map;
  */
 public final class AWSMetadata {
     private static final AWSMetadata instance=null;
-    private String region;
+	private String hostname;
+	private String local_hostname;
+	private String instance_id;
+	private String instance_type;
+	private String public_hostname;
+	private String public_ipv4;
+	private String reservation_id;
+	private String ami_id;
+	private String ami_launch_index;
+	private String placement_availability_zone;
 
-	public String getAmi_id() {
-		return (String) metadataMap.get("ami-id");
+	public String getInstance_id() {
+		return instance_id;
 	}
 
-	public void setAmi_id(String ami_id) {
+	private void setInstance_id(String instance_id) {
+		this.instance_id = instance_id;
+	}
+
+	public String getInstance_type() {
+		return instance_type;
+	}
+
+	private void setInstance_type(String instance_type) {
+		this.instance_type = instance_type;
+	}
+
+	public String getPublic_hostname() {
+		return public_hostname;
+	}
+
+	private void setPublic_hostname(String public_hostname) {
+		this.public_hostname = public_hostname;
+	}
+
+	public String getPublic_ipv4() {
+		return public_ipv4;
+	}
+
+	private void setPublic_ipv4(String public_ipv4) {
+		this.public_ipv4 = public_ipv4;
+	}
+
+	public String getReservation_id() {
+		return reservation_id;
+	}
+
+	private void setReservation_id(String reservation_id) {
+		this.reservation_id = reservation_id;
+	}
+
+	public String getAmi_launch_index() {
+		return ami_launch_index;
+	}
+
+	private void setAmi_launch_index(String ami_launch_index) {
+		this.ami_launch_index = ami_launch_index;
+	}
+
+	public String getPlacement_availability_zone() {
+		return placement_availability_zone;
+	}
+
+	private void setPlacement_availability_zone(String placement_availability_zone) {
+		this.placement_availability_zone = placement_availability_zone;
+	}
+
+	public String getLocal_hostname() {
+		return local_hostname;
+	}
+
+	private void setLocal_hostname(String local_hostname) {
+		this.local_hostname = local_hostname;
+	}
+
+	public String getAmi_id() {
+		return ami_id;
+	}
+
+	private void setAmi_id(String ami_id) {
 		this.ami_id = ami_id;
 	}
 
-	private String ami_id;
-    private String ami_launch_index;
-    private String availability_zone;
-
 	public String getHostname() {
-		return (String) metadataMap.get("hostname");
+		return hostname;
 	}
 
-	public void setHostname(String hostname) {
+	private void setHostname(String hostname) {
 		this.hostname = hostname;
 	}
-
-	private String hostname;
-    private String local_hostname;
-    private String instance_id;
-    private String instance_type;
-    private String public_hostname;
-    private String public_ipv4;
-    private String reservation_id;
-
-	private Map metadataMap=new HashMap();
 
     protected AWSMetadata() {
         // defeat constructor
 
-        // call the metadata service and populate the region
-        this.getAWSMetaData();
-    }
+        // get metadata values for each value in this object
+        this.setAmi_id(getMetadataValue("ami-id"));
+		this.setAmi_launch_index(getMetadataValue("ami-launch-index"));
+		this.setHostname(getMetadataValue("hostname"));
+		this.setInstance_id(getMetadataValue("instance-id"));
+		this.setInstance_type(getMetadataValue("instance-type"));
+		this.setLocal_hostname(getMetadataValue("local-hostname"));
+		this.setPlacement_availability_zone(getMetadataValue("placement/availability-zone"));
+		this.setPublic_hostname(getMetadataValue("public-hostname"));
+		this.setPublic_ipv4(getMetadataValue("public-ipv4"));
+		this.setReservation_id(getMetadataValue("reservation-id"));
+	}
 
     // singleton pattern
     public static final AWSMetadata getInstance() {
@@ -61,16 +129,11 @@ public final class AWSMetadata {
         return(instance);
     }
 
-	public String getRegion() {
-        return region;
-    }
-    public void setRegion(String region) {
-        this.region = region;
-    }
-
-	private String populateMetadata(String key) {
+	private String getMetadataValue(String metadataKey) {
 		String metadataValue="";
-		String urlString="http://169.254.169.254/latest/meta-data/" + key;
+
+		// this is the base URL of the local metadata service on AWS instances
+		String urlString="http://169.254.169.254/latest/meta-data/" + metadataKey;
 		URL url;
 		InputStream is=null;
 		BufferedReader br;
@@ -94,11 +157,11 @@ public final class AWSMetadata {
 		}
 		catch(SocketTimeoutException ste) {
 			// if we got here, the metadata service must not be responding (we are on something other than an AWS EC2 instance)
-			this.setRegion("localhost");
+			metadataValue="(n/a, localhost)";
 		}
 		catch(java.net.ConnectException ce) {
 			// if we got here, the metadata service must not be responding (we are on something other than an AWS EC2 instance)
-			this.setRegion("localhost");
+			metadataValue="(n/a, localhost)";
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -108,72 +171,13 @@ public final class AWSMetadata {
 			catch (IOException ioe) {
 				// noop
 			}
-
 		} // catch
 		finally {
 
 		}
 
 		return(metadataValue);
-	} // populateMetadata
-
-    private void getAWSMetaData() {
-        metadataMap.put("ami-id","NO_AMI");
-		metadataMap.put("ami-launch-index","NO_AMI_LAUNCH_INDEX");
-		metadataMap.put("hostname","NO_HOSTNAME");
-		metadataMap.put("placement/availability-zone","NO_AVAILABILITY_ZONE");
-
-		// get the metadata for the ami-id key and put it into the map
-		metadataMap.put("ami-id", this.populateMetadata("ami-id"));
-		metadataMap.put("hostname", this.populateMetadata("hostname"));
+	} // getMetadataValue
 
 
-		URL url;
-        InputStream is=null;
-        BufferedReader br;
-        String line;
-
-        try {
-            //url=new URL("http://169.254.169.254/latest/meta-data/instance-id");
-            url=new URL("http://169.254.169.254/latest/meta-data/placement/availability-zone");
-
-            URLConnection urlCxn=url.openConnection();
-            urlCxn.setConnectTimeout(15000);
-            urlCxn.setReadTimeout(15000);
-            urlCxn.setAllowUserInteraction(false);
-            urlCxn.setDoOutput(true);
-
-            is=urlCxn.getInputStream();
-            br= new BufferedReader(new InputStreamReader(is));
-
-            while((line=br.readLine()) !=null) {
-                this.setRegion(line);
-
-            }
-        }
-        catch(SocketTimeoutException ste) {
-            // if we got here, the metadata service must not be responding (we are on something other than an AWS EC2 instance)
-            this.setRegion("localhost");
-        }
-        catch(java.net.ConnectException ce) {
-            // if we got here, the metadata service must not be responding (we are on something other than an AWS EC2 instance)
-            this.setRegion("localhost");
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-            try {
-                if (is != null) is.close();
-            }
-            catch (IOException ioe) {
-                // noop
-            }
-
-        } // catch
-        finally {
-
-        }
-
-
-    }
-
-} // class
+} // class AWSMetadata

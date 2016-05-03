@@ -45,12 +45,16 @@ class BootStrap {
 
         def now=new Date();
         def dateString=now.getDateTimeString();
+        def healthcheckString
 
         AWSMetadata awsMetaData=AWSMetadata.getInstance();
-        print "Region: " + awsMetaData.getRegion();
+        print "AZ: " + awsMetaData.getPlacement_availability_zone();
 
         print "Loading healthcheck data... "
-        healthcheck=new Healthcheck(databaseHealth: awsMetaData.getHostname() + '(' + dateString +'), Region: ' + awsMetaData.getRegion() + ", AMI ID: " + awsMetaData.getAmi_id() );
+
+        healthcheckString=dateString + ": " + awsMetaData.getLocal_hostname() + ", in AZ " + awsMetaData.getPlacement_availability_zone() + " (res. id: " + awsMetaData.getReservation_id() + ")";
+
+        healthcheck=new Healthcheck(databaseHealth: healthcheckString);
         assert healthcheck.save(failOnError: true, flush: true, insert:true)
         healthcheck.errors=null;
         print "done."
@@ -63,7 +67,6 @@ class BootStrap {
         city = new City(cityName: 'Berlin', postalCode: "10115", countryCode: 'DE', testField: 'bar', testField2: 'BAR')
         assert city.save(failOnError:true, flush:true, insert: true)
         city.errors = null
-
 
         //assert City.count == 2;
         //println "done, loaed $City.count cities into database"
