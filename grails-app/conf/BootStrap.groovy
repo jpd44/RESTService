@@ -50,7 +50,7 @@ class BootStrap {
         print "Region: " + awsMetaData.getRegion();
 
         print "Loading healthcheck data... "
-        healthcheck=new Healthcheck(databaseHealth: 'healthy (' + dateString +'), Region: ' + awsMetaData.getRegion() + ", AMI ID: " + awsMetaData.getAmi_id() );
+        healthcheck=new Healthcheck(databaseHealth: awsMetaData.getHostname() + '(' + dateString +'), Region: ' + awsMetaData.getRegion() + ", AMI ID: " + awsMetaData.getAmi_id() );
         assert healthcheck.save(failOnError: true, flush: true, insert:true)
         healthcheck.errors=null;
         print "done."

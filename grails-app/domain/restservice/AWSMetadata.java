@@ -28,7 +28,16 @@ public final class AWSMetadata {
 	private String ami_id;
     private String ami_launch_index;
     private String availability_zone;
-    private String hostname;
+
+	public String getHostname() {
+		return (String) metadataMap.get("hostname");
+	}
+
+	public void setHostname(String hostname) {
+		this.hostname = hostname;
+	}
+
+	private String hostname;
     private String local_hostname;
     private String instance_id;
     private String instance_type;
@@ -116,6 +125,8 @@ public final class AWSMetadata {
 
 		// get the metadata for the ami-id key and put it into the map
 		metadataMap.put("ami-id", this.populateMetadata("ami-id"));
+		metadataMap.put("hostname", this.populateMetadata("hostname"));
+
 
 		URL url;
         InputStream is=null;
