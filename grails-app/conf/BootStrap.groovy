@@ -4,8 +4,6 @@ import restservice.City
 import restservice.Healthcheck
 import restservice.AWSMetadata
 
-//import org.apache.commons.configuration.PropertiesConfiguration
-//import org.apache.commons.configuration.ConfigurationException
 class BootStrap {
     def grailsApplication
 
@@ -35,6 +33,18 @@ class BootStrap {
     } // init
     def destroy = {
         println "Application shutting down..."
+
+        def healthcheck=null
+        def healthcheckString
+
+        AWSMetadata awsMetaData=AWSMetadata.getInstance();
+
+        healthcheckString=awsMetaData.getLocal_hostname() + " going away..."
+
+        healthcheck=new Healthcheck(databaseHealth: healthcheckString);
+        assert healthcheck.save(failOnError: true, flush: true, insert:true)
+        healthcheck.errors=null;
+        print "done."
     }
 
 
