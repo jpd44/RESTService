@@ -20,12 +20,12 @@
 	</head>
 	<body>
 		<div id="grailsLogo" role="banner"><a href="/">
-		    <asset:image src="octank_logo.png" height="75" width="75" alt="Octank"/></a>
+		    <asset:image src="octank_logo.png" height="75" width="75" border="1" alt="Octank"/></a>
 		</div>
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo">
 		    Availability Zone: ${awsMetadata.getPlacement_availability_zone()},
-		    Instance: ${awsMetadata.getLocal_hostname()}
+		    Instance: ${awsMetadata.getReservation_id()}
 		    &nbsp;
 		    (${awsMetadata.getInstance_type()})
 		</div>
