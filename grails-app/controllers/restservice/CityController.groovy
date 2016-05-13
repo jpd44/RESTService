@@ -4,11 +4,16 @@ package restservice
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import grails.rest.RestfulController
 
 @Transactional(readOnly = true)
-class CityController {
 
+class CityController extends RestfulController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+
+    CityController() {
+        super(City)
+    }
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)

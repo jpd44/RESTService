@@ -10,6 +10,7 @@ class UrlMappings {
         "/"(view:"/index")
         "500"(view:'/error')
 
-        "/api/city" (resources:'City')
+        "/api/city" (resources:'city')
+        //"/api/city" (controller:'restfulCity', resources: 'city')
 	}
 }
