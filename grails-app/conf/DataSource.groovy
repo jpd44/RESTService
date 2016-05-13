@@ -19,6 +19,7 @@ environments {
     development {
         dataSource {
             dbCreate = "update"
+            // dbCreate = "create-drop"
             driverClassName = "com.mysql.jdbc.Driver"
             username="master"
             password="iloveamazon!"

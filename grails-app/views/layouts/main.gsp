@@ -1,3 +1,5 @@
+<g:set var="awsMetadata" bean="awsMetadata"/>
+
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
@@ -17,9 +19,16 @@
 		<g:layoutHead/>
 	</head>
 	<body>
-		<div id="grailsLogo" role="banner"><a href="http://grails.org"><asset:image src="grails_logo.png" alt="Grails"/></a></div>
+		<div id="grailsLogo" role="banner"><a href="http://grails.org">
+		    <asset:image src="grails_logo.png" alt="Grails"/></a>
+		</div>
 		<g:layoutBody/>
-		<div class="footer" role="contentinfo"></div>
+		<div class="footer" role="contentinfo">
+		    Availability Zone: ${awsMetadata.getPlacement_availability_zone()},
+		    Instance: ${awsMetadata.getLocal_hostname()}
+		    &nbsp;
+		    (${awsMetadata.getInstance_type()})
+		</div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
 	</body>
 </html>

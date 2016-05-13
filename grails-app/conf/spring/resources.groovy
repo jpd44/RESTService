@@ -1,6 +1,7 @@
 // Place your Spring DSL code here
 import grails.rest.render.xml.*
 import grails.rest.render.json.JsonRenderer
+import restservice.AWSMetadata
 import restservice.City
 
 beans = {
@@ -10,6 +11,10 @@ beans = {
 
     cityJsonRenderer(JsonRenderer, City) {
         excludes=['class','dateCreated']
+    }
+
+    awsMetadata(restservice.AWSMetadata) {
+        bean -> bean.scope='request'
     }
 
     /*
