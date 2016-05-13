@@ -25,7 +25,7 @@
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo">
 		    Availability Zone: ${awsMetadata.getPlacement_availability_zone()},
-		    Instance: ${awsMetadata.getReservation_id()}
+		    Instance: ${awsMetadata.getInstance_id()}
 		    &nbsp;
 		    (${awsMetadata.getInstance_type()})
 		</div>
