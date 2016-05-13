@@ -19,8 +19,8 @@
 		<g:layoutHead/>
 	</head>
 	<body>
-		<div id="grailsLogo" role="banner"><a href="http://grails.org">
-		    <asset:image src="grails_logo.png" alt="Grails"/></a>
+		<div id="grailsLogo" role="banner"><a href="/">
+		    <asset:image src="octank_logo.png" height="75" width="75" alt="Octank"/></a>
 		</div>
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo">
