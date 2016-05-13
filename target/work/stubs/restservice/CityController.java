@@ -9,14 +9,12 @@ import groovy.util.*;
 import static org.springframework.http.HttpStatus.*;
 
 @grails.transaction.Transactional(readOnly=true) public class CityController
-  extends java.lang.Object  implements
-    groovy.lang.GroovyObject {
+  extends grails.rest.RestfulController {
 ;
-public  groovy.lang.MetaClass getMetaClass() { return (groovy.lang.MetaClass)null;}
-public  void setMetaClass(groovy.lang.MetaClass mc) { }
-public  java.lang.Object invokeMethod(java.lang.String method, java.lang.Object arguments) { return null;}
-public  java.lang.Object getProperty(java.lang.String property) { return null;}
-public  void setProperty(java.lang.String property, java.lang.Object value) { }
+public CityController
+() {
+super ((java.lang.Class)null);
+}
 public static  java.lang.Object getAllowedMethods() { return null;}
 public static  void setAllowedMethods(java.lang.Object value) { }
 public  java.lang.Object index(java.lang.Integer max) { return null;}
