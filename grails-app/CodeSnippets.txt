@@ -1,0 +1,22 @@
+// code snippets 5/15/2016
+
+<!—- Code to display instance info in footer of main.gsp —->
+Availability Zone: ${awsMetadata.getPlacement_availability_zone()},
+Instance: ${awsMetadata.getInstance_id()}
+&nbsp;
+(${awsMetadata.getInstance_type()})
+
+<!— green color code —>
+#40FF00
+
+<!— blue color code —>
+#0E54F4
+
+# Python to POST cities to REST endpoint in environment a
+python ~/Developer/pycharmWorkspace/cityProcessor/cityProcessor-RESTService-1.py ~/Developer/free-zipcode-database.csv http://restservice-env-a.us-east-1.elasticbeanstalk.com/api/city
+
+# Bash script to list cities
+./getCities.sh
+
+# Flush DNS cache in OS X
+sudo killall -HUP mDNSResponder
