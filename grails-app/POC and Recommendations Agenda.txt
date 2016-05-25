@@ -1,0 +1,25 @@
+POC and Recommendations
+
+1. Recap from last session
+- How can we handle DR scenarios?
+- How can we deploy the application with zero downtime?
+- How do we bake security in the design, day 1?
+- Whiteboarded potential architecture
+
+2. What we have today
+- POC RESTful API and live demo using VPC, EC2, RDS, Elastic Beanstalk
+    - EB interface: resource settings, scaling policies, etc.
+    - Developer workflow: Grails, git, new EB version
+    - Good practices: separate application, resource, database deployments, managed OS updates
+        - code: "All-at-once"
+        - Resource: "rolling"
+        - database: special handling
+
+- Demonstrate a zero-downtime deployment with Elastic Beanstalk
+    - DNS swap (with rollback)
+
+- Demonstrate an database failover with RDS
+
+3. Next steps
+- Pricing estimate
+- Further automation with Git, CodePipeline

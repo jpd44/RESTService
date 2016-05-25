@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/target/work/plugins/scaffolding-2.1.2/src/scaffolding-2.1.2.iml" filepath="$PROJECT_DIR$/target/work/plugins/scaffolding-2.1.2/src/scaffolding-2.1.2.iml" />
       <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
       <module fileurl="file://$PROJECT_DIR$/target/work/plugins/tomcat-7.0.55.3/src/tomcat-7.0.55.3.iml" filepath="$PROJECT_DIR$/target/work/plugins/tomcat-7.0.55.3/src/tomcat-7.0.55.3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/target/work/work.iml" filepath="$PROJECT_DIR$/target/work/work.iml" />
     </modules>
   </component>
 </project>

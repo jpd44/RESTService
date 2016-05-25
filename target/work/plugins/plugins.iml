@@ -15,7 +15,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="asset-pipeline-2.5.7" />
-    <orderEntry type="module" module-name="cache-1.1.8" />
     <orderEntry type="module" module-name="scaffolding-2.1.2" />
+    <orderEntry type="module" module-name="cache-1.1.8" />
   </component>
 </module>

@@ -20,3 +20,5 @@ python ~/Developer/pycharmWorkspace/cityProcessor/cityProcessor-RESTService-1.py
 
 # Flush DNS cache in OS X
 sudo killall -HUP mDNSResponder
+
+
